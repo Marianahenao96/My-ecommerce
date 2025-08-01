@@ -1,10 +1,12 @@
-import { useState } from "react";
-import { addToCart } from "../../data/cart";
-import "./ItemCount.css"; // estilos separados
+import { useState, useContext } from "react";
+import { CartContext } from "../../context/CartContext";
+import "./ItemCount.css";
 
 const ItemCount = ({ product }) => {
   const [cantidad, setCantidad] = useState(1);
   const [loading, setLoading] = useState(false);
+
+  const { addItem } = useContext(CartContext); 
 
   const aumentar = () => {
     if (cantidad < product.stock) {
@@ -21,8 +23,7 @@ const ItemCount = ({ product }) => {
   const handleAgregar = async () => {
     setLoading(true);
     try {
-      await addToCart(product, cantidad);
-      alert(`🛒 Agregaste ${cantidad} unidad(es) de ${product.name}`);
+      addItem(product, cantidad); 
     } catch (error) {
       console.error("Error al agregar:", error);
     } finally {

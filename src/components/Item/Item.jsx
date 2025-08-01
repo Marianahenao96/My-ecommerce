@@ -16,7 +16,6 @@ const Item = ({ product }) => {
     setLoading(true);
     try {
       await addToCart(product, cantidad);
-      alert('Producto agregado al carrito');
     } catch (err) {
       console.error('Error al agregar al carrito:', err);
     } finally {
