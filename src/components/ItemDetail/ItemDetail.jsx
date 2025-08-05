@@ -1,8 +1,16 @@
-import React from "react";
-import ItemCount from "./ItemCount"; // asegúrate que esté en la misma carpeta
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; 
+import ItemCount from "./ItemCount";
 import "./ItemDetail.css";
 
 const ItemDetail = ({ product = {} }) => {
+  const [mostrarContador, setMostrarContador] = useState(true);
+  const navigate = useNavigate(); 
+
+  const handleGoToCart = () => {
+    navigate("/cart"); 
+  };
+
   return (
     <div className="item-detail">
       <img className="item-image" src={product.image} alt={product.name} />
@@ -12,7 +20,16 @@ const ItemDetail = ({ product = {} }) => {
         <p>{product.description}</p>
         <p className="item-price">${product.price}</p>
 
-        <ItemCount product={product} />
+        {mostrarContador ? (
+          <ItemCount product={product} onAdded={() => setMostrarContador(false)} />
+        ) : (
+          <div>
+            <p style={{ color: "green" }}>¡Producto agregado al carrito!</p>
+            <button className="btn-ir-carrito" onClick={handleGoToCart}>
+              Ir al carrito
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 #Mariana Henao
 
-🦷 DentiShop - Simulador de Reservas y Compras Odontológicas
-DentiShop es una aplicación web desarrollada en React.js que simula un sistema de ecommerce para insumos odontológicos y gestión de reservas. Permite a los usuarios navegar por productos, agregarlos al carrito, completar un proceso de checkout personalizado y almacenar los pedidos en Firebase con estado de pago. Este proyecto se realiza con proyección a futuro dado que contamos con un consultorio llamado Dentisur.
+🦷 DentiShop - Simulador de Compras Odontológicas
+DentiShop es una aplicación web desarrollada en React.js que simula un sistema de ecommerce para insumos odontológicos. Permite a los usuarios navegar por productos, agregarlos al carrito, completar un proceso de checkout personalizado y almacenar los pedidos en Firebase con estado de pago. Este proyecto se realiza con proyección a futuro dado que contamos con un consultorio llamado Dentisur.
 
 🚀 Características principales
 
