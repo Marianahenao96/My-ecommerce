@@ -1,7 +1,7 @@
 import useProducts from '../../hooks/useProducts';
 import ItemList from '../ItemList/ItemList';
 import Loading from '../Loading/Loading';
-import './itemListContainer.css';
+import './ItemListContainer.css';
 import { useParams } from 'react-router-dom';
 
 const ItemListContainer = ({ mensaje }) => {
